@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChatApplicatie.Model\ChatApplicatie.Model.csproj" />
+    <ProjectReference Include="..\ChatApplicatie.Resources\ChatApplicatie.Resources.csproj" />
+    <ProjectReference Include="..\ChatApplicatie\ChatApplicatie.csproj" />
+  </ItemGroup>
+
+</Project>

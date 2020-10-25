@@ -1,0 +1,51 @@
+﻿@using System.Collections.Specialized
+@using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata
+@model  IList<ChatApplicatie.Model.ChatMessageRequest>
+
+
+@{
+    ViewData["Title"] = "Chat Room";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">ChatRoom</h1>
+    <div class="align-content-center">
+        <table class="table table-striped">
+            <thead class="thead-dark" >
+            <tr class="table table-bordered">
+
+                <th>Channels</th>
+                <th width ="75%">Chat</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @foreach (var channels in Model)
+                        {
+                            <partial name="ChannelPartial" model="channels" />
+                        }
+                    </td>
+                    @*<td>
+                        @foreach (var messages in Model)
+                        {
+                            <partial name="MessagePartial" model="messages" />
+                        }
+                    </td>*@
+                </tr>
+            
+            </tbody>
+        </table>
+        <form method="post">
+            <div class="form-group">
+                
+                <input name="channel"  placeholder="Channelnaam" class="form-control" /> <button type="submit"  asp-action="CreateChannel" class="btn btn-primary">Aanmaken</button>
+                
+            </div>
+
+           
+
+        </form>
+    </div>
+</div>
